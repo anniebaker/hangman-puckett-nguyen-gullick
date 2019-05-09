@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title>Hangman</title>
+</head>
+<body class=center>
+    <h1>Hangman</h1>
+    <a class="waves-effect waves-light btn">A</a>
+    <a class="waves-effect waves-light btn">B</a>
+    <a class="waves-effect waves-light btn">C</a>
+    <a class="waves-effect waves-light btn">D</a>
+    <a class="waves-effect waves-light btn">E</a>
+    <a class="waves-effect waves-light btn">F</a>
+    <a class="waves-effect waves-light btn">G</a>
+    <a class="waves-effect waves-light btn">H</a>
+    <a class="waves-effect waves-light btn">I</a>
+    <a class="waves-effect waves-light btn">J</a>
+    <a class="waves-effect waves-light btn">K</a>
+    <a class="waves-effect waves-light btn">L</a>
+    <a class="waves-effect waves-light btn">M</a>
+    <a class="waves-effect waves-light btn">N</a>
+    <a class="waves-effect waves-light btn">O</a>
+    <a class="waves-effect waves-light btn">P</a>
+    <a class="waves-effect waves-light btn">Q</a>
+    <a class="waves-effect waves-light btn">R</a>
+    <a class="waves-effect waves-light btn">S</a>
+    <a class="waves-effect waves-light btn">T</a>
+    <a class="waves-effect waves-light btn">U</a>
+    <a class="waves-effect waves-light btn">V</a>
+    <a class="waves-effect waves-light btn">W</a>
+    <a class="waves-effect waves-light btn">X</a>
+    <a class="waves-effect waves-light btn">Y</a>
+    <a class="waves-effect waves-light btn">Z</a>
+
+    <div class="container">
+        <input type="text" id="letter">
+        <br>
+        <button type="submit" id="button" onclick="checkGuess()" >Submit</button>
+        <p id="correct"></p>
+    </div>
+
+
+    <div>
+        <div>
+            <h3 id= "E1"></h3>
+        </div>
+        <div>
+            <h3></h3>
+        </div>   
+    </div>
+    <script src="hangman.js"></script>
+</body>
+</html>
