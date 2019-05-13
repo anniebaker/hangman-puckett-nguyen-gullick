@@ -40,25 +40,29 @@ let createBlankSpace = () => {
 };
 createBlankSpace();
 
+let allGuesses = [];
 let guessArray = [];
+let noDupesArr = []
 function letterGuess(){
 
     let guess = document.getElementById('letter').value;
     let letter = guess.toLowerCase().trim();
-        if (letter.length > 0){
-            for (let i=0; i<randomAnswer.length;i++){
-                if (randomAnswer[i]===letter)
-                {   
-                    // let singleLetter = letter.splice(0,-1);
-                    console.log(letter);
-                    //guessArray.push(singleLetter);
-                    correctGuessArr[i]=letter;
+    allGuesses.push(letter);
+    if (letter.length > 0){
+        for (let i=0; i<randomAnswer.length;i++){
+            if (randomAnswer[i]===letter)
+            {   
+                correctGuessArr[i]=letter;
+                guessArray.push(letter);
+                for (let n=0;n<guessArray.length; n++) {
+                    if (noDupesArr.indexOf(guessArray[n]) === -1) {
+                        noDupesArr.push(guessArray[n]);
+                    }
                 }
+            }
         }
         count++;
-        console.log(count);
-        console.log(guessArray);
-        let wrongCount = 8-(count-guessArray.length);
+        let wrongCount = 8-(count-noDupesArr.length);
         document.getElementById('counter').innerHTML= count;
         document.getElementById('wrong-counter').innerHTML= wrongCount;
         document.getElementById("correctguess").innerHTML=correctGuessArr.join(" ");
