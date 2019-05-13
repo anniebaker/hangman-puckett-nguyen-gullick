@@ -40,14 +40,12 @@ let createBlankSpace = () => {
 };
 createBlankSpace();
 
-let allGuesses = [];
 let guessArray = [];
 let noDupesArr = []
 function letterGuess(){
 
     let guess = document.getElementById('letter').value;
     let letter = guess.toLowerCase().trim();
-    allGuesses.push(letter);
     if (letter.length > 0){
         for (let i=0; i<randomAnswer.length;i++){
             if (randomAnswer[i]===letter)
