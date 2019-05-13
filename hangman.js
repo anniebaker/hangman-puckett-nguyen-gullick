@@ -13,6 +13,7 @@ const hangmanAnswers = [
 ];
 let stringAnswer;
 let count=0;
+let wrongCount =0;
 // create array for correct guess.
 let correctGuessArr = [];
 
@@ -34,30 +35,37 @@ let createBlankSpace = () => {
     correctGuessArr[i]="_";
    
   }
-  stringAnswer=correctGuessArr.join("");
+  stringAnswer=correctGuessArr.join(" ");
   document.getElementById('correctguess').innerHTML=stringAnswer
 };
 createBlankSpace();
 
-
+let guessArray = [];
 function letterGuess(){
 
-    let letter = document.getElementById('letter').value;
-
-    if (letter.length > 0){
-        for (let i=0; i<randomAnswer.length;i++){
-            if (randomAnswer[i]===letter)
-            {
-                correctGuessArr[i]=letter;
-            }
+    let guess = document.getElementById('letter').value;
+    let letter = guess.toLowerCase().trim();
+        if (letter.length > 0){
+            for (let i=0; i<randomAnswer.length;i++){
+                if (randomAnswer[i]===letter)
+                {   
+                    // let singleLetter = letter.splice(0,-1);
+                    console.log(letter);
+                    //guessArray.push(singleLetter);
+                    correctGuessArr[i]=letter;
+                }
         }
         count++;
-        document.getElementById('counter').innerHTML="Number of clicks" + count
+        console.log(count);
+        console.log(guessArray);
+        let wrongCount = 8-(count-guessArray.length);
+        document.getElementById('counter').innerHTML= count;
+        document.getElementById('wrong-counter').innerHTML= wrongCount;
         document.getElementById("correctguess").innerHTML=correctGuessArr.join(" ");
-    }
-    if (count>7){
-        document.getElementById('stat').innerHTML="too many guesses";
-    }
 
+    }
+        if ((count-guessArray.length)>7){
+        document.getElementById('stat').innerHTML="You've guessed wrong too many times. Game Over!";
+    }
 }
 
